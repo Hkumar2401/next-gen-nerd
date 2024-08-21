@@ -1,0 +1,26 @@
+name = "next-gen-nerd"
+compatibility_date = "2024-08-18"
+
+[vars]
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiYjA5MDc2N2MtYTBlYy00ODkwLWJkNDMtYzU5ZDkwNWQwY2EzIiwidGVuYW50X2lkIjoiNDFkM2Y1MmFhYjcwMDY5NWFlYzE1NWE0YjE3NDdhMTJhNGE1M2U4MzNjMzBlYjI4NmI5ODI4NTRmOTgyMTI1ZCIsImludGVybmFsX3NlY3JldCI6IjBmOTM0MDRkLTFhMmQtNDhlZS05ZjNkLTk5MGFhZTQ1MTQ1YyJ9.gu0WhpwWrWzmmc8Vx0QqGWdUrJ6n0oDUQ5JQUMvtSns"
+JWT_PASSWORD="12345"
+
+# [vars]
+# MY_VAR = "my-variable"
+
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "my-database"
+# database_id = ""
+
+# [ai]
+# binding = "AI"
