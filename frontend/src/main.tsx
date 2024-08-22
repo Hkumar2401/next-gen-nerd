@@ -6,7 +6,8 @@ import './index.css'
 import Home from './pages/Home.tsx';
 import Signup from './pages/Signup.tsx';
 import Blogs from './pages/Blogs.tsx';
-import CreateBlog from './pages/createBlog.tsx';
+import CreateBlog from './pages/CreateBlog.tsx';
+import Blog from './pages/Blog.tsx';
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/createBlog",
         element: <CreateBlog />
+      },
+      {
+        path: "/blog/getBlog/:blogId",
+        element: <Blog />
       },
     ]
   }

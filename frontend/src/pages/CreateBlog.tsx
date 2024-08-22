@@ -9,14 +9,18 @@ const CreateBlog = () => {
         description: ""
     });
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const navigate = useNavigate();
 
     const handleCreateBlog = async ()=>{
+        setIsLoading(true);
         const {data} = await axios.post('https://next-gen-nerd.hemantk240103.workers.dev/blog/createBlog', blogInput, {
             headers: {
                 'Authorization': localStorage.getItem('token')
             }
         });
+        setIsLoading(false);
 
         console.log(data);
 
@@ -43,7 +47,11 @@ const CreateBlog = () => {
                 setBlogInput((prevState)=> ({...prevState, description: e.target.value}))
             }} value={blogInput.description} id="description" className="p-3 mt-5 bg-[#030711] rounded-md border-[1px] border-gray-700 outline-4 outline-offset-2 focus:outline outline-gray-800 resize-none" placeholder="Enter your thoughts here...." />
 
-            <button onClick={handleCreateBlog} className="mt-10 bg-blue-700 rounded-md p-3" type="submit">Create</button>
+            <button onClick={handleCreateBlog} className="mt-10 bg-blue-700 rounded-md p-3" type="submit">
+            {
+            isLoading ? <span className="loader"></span> : "Create"
+          }
+            </button>
         </form>
     </div>
   )
