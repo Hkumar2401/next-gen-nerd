@@ -3,10 +3,12 @@ import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { userRouter } from './router/userRouter';
 import { blogRouter } from './router/blogRouter';
+import { cors } from 'hono/cors';
 
 
 const app = new Hono();
 
+app.use(cors());
 app.route('/user', userRouter);
 app.route('/blog', blogRouter);
 

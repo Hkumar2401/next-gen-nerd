@@ -15,7 +15,7 @@ const Footer = () => {
           Hkumar2401
         </a>
         . The source code is available on{" "}
-        <a href="" className="underline">
+        <a href="https://github.com/Hkumar2401/next-gen-nerd" target="_blank" className="underline">
           Github
         </a>
         .

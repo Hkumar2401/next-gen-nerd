@@ -14,6 +14,7 @@ export const signup = async (c: Context) => {
   if(!zodParsed.success){
     return c.json({
       message: "Wrong Inuts!",
+      success: false,
       error: zodParsed.error.issues[0].message
     });
   }
@@ -29,7 +30,8 @@ export const signup = async (c: Context) => {
 
     if (isUserPresent) {
       return c.json({
-        message: "User already present with this email!"
+        message: "User already present with this email!",
+        success: false
       });
     }
 
@@ -46,13 +48,14 @@ export const signup = async (c: Context) => {
 
     return c.json({
       message: "Users created successfully!!",
-      data: user,
+      success: true,
       token
     });
 
   } catch (error) {
     return c.json({
       message: "Some error occured while signing up!",
+      success: false,
       error
     });
   }
@@ -68,6 +71,7 @@ export const signin = async (c: Context) => {
   if(!zodParsed.success){
     return c.json({
       message: "Wrong Inuts!",
+      success: false,
       error: zodParsed.error.issues[0].message
     });
   }
@@ -83,7 +87,8 @@ export const signin = async (c: Context) => {
 
     if(!user){
       return c.json({
-        message: "User not found!"
+        message: "User not found!",
+        success: false
       });
     }
 
@@ -91,7 +96,7 @@ export const signin = async (c: Context) => {
 
     return c.json({
       message: "Signed in Successfully!",
-      user: user,
+      success: true,
       token,
     });
 
@@ -99,6 +104,7 @@ export const signin = async (c: Context) => {
 
     return c.json({
       message: "Some error occured!",
+      success: "false",
       error
     });
 
