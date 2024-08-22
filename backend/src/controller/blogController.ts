@@ -14,6 +14,7 @@ export const createBlog = async (c: Context) => {
     if (!zodParsed.success) {
         return c.json({
             message: "Wrong Inputs!",
+            success: false,
             error: zodParsed.error.issues[0].message
         });
     }
@@ -32,12 +33,14 @@ export const createBlog = async (c: Context) => {
 
         return c.json({
             message: "Blog created successfully!",
+            success: true,
             blog: blog
         });
 
     } catch (error) {
         return c.json({
             message: "Some error occured!",
+            success: false,
             error
         });
     }
@@ -58,12 +61,14 @@ export const getBlog = async (c: Context) => {
 
         return c.json({
             message: "Blogs found!",
+            success: true,
             blog
         });
 
     } catch (error) {
         return c.json({
             message: "Some error occured!",
+            success: false,
             error
         });
     }
@@ -83,12 +88,14 @@ export const getAllBlogs = async (c: Context) => {
 
         return c.json({
             message: "Blogs found!",
+            success: true,
             blogs
         });
 
     } catch (error) {
         return c.json({
             message: "Some error occured!",
+            success: false,
             error
         });
     }
@@ -102,12 +109,14 @@ export const getBlogsTable = async (c: Context) => {
 
         return c.json({
             message: "Blogs table found!",
+            success: true,
             blogs
         });
 
     } catch (error) {
         return c.json({
             message: "Some error occured!",
+            success: false,
             error
         });
     }
@@ -121,12 +130,14 @@ export const clearBlogsTable = async (c: Context) => {
 
         return c.json({
             message: "Blogs table data deleted!",
+            success: true,
             blogs
         });
 
     } catch (error) {
         return c.json({
             message: "Some error occured!",
+            success: false,
             error
         });
     }
@@ -145,6 +156,7 @@ export const updateBlog = async (c: Context) =>{
     if (!zodParsed.success) {
         return c.json({
             message: "Wrong Inputs!",
+            success: false,
             error: zodParsed.error.issues[0].message
         });
     }
@@ -167,12 +179,14 @@ export const updateBlog = async (c: Context) =>{
 
         return c.json({
             message: "Blog updated successfully!",
+            success: true,
             updatedBlog
         });
         
     } catch(error){
         return c.json({
             message: "Some error occured!",
+            success: false,
             error
         });
     }

@@ -7,7 +7,8 @@ export const authMiddleware = createMiddleware(async (c: Context, next) => {
     const token: any = c.req.header('authorization');
     if (!token) {
         return c.json({
-            message: "error : unauthorized"
+            message: "error : unauthorized",
+            success: false
         });
     }
 
@@ -23,6 +24,7 @@ export const authMiddleware = createMiddleware(async (c: Context, next) => {
     } catch (error) {
         return c.json({
             message: "Wrong token!",
+            success: false
         })
     }
 

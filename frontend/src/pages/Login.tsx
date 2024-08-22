@@ -11,21 +11,25 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleSignin = async () =>{
+  const handleSignin = async () => {
     setIsLoading(true);
-    const {data} = await axios.post('https://next-gen-nerd.hemantk240103.workers.dev/user/signin', loginData, {
-      headers: {
-        'Content-Type': 'application'
+    const { data } = await axios.post(
+      "https://next-gen-nerd.hemantk240103.workers.dev/user/signin",
+      loginData,
+      {
+        headers: {
+          "Content-Type": "application",
+        },
       }
-    });
+    );
     setIsLoading(false);
-    if(data.success){
+    localStorage.setItem("token", data.token);
+    if (data.success) {
       navigate("/blogs");
     }
 
     console.log(data);
-    
-  }
+  };
 
   return (
     <div className="w-full h-screen text-white flex flex-col justify-center items-center">
@@ -77,9 +81,7 @@ const Login = () => {
           className="w-full bg-[#dfe2e5] mt-10 p-2 rounded-md text-black"
           onClick={handleSignin}
         >
-          {
-            isLoading ? <span className="loader"></span> : "Signin"
-          }
+          {isLoading ? <span className="loader"></span> : "Signin"}
         </button>
 
         <Link

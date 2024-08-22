@@ -6,6 +6,7 @@ import './index.css'
 import Home from './pages/Home.tsx';
 import Signup from './pages/Signup.tsx';
 import Blogs from './pages/Blogs.tsx';
+import CreateBlog from './pages/createBlog.tsx';
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />
+      },
+      {
+        path: "/createBlog",
+        element: <CreateBlog />
       },
     ]
   }

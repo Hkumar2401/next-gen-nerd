@@ -13,7 +13,7 @@ export const signup = async (c: Context) => {
 
   if(!zodParsed.success){
     return c.json({
-      message: "Wrong Inuts!",
+      message: "Wrong Inputs!",
       success: false,
       error: zodParsed.error.issues[0].message
     });

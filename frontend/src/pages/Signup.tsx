@@ -21,6 +21,8 @@ const Signup = () => {
       }
     });
     setIsLoading(false);
+    
+    localStorage.setItem('token', data.token);
 
     if(data.success){
       navigate('/blogs');
